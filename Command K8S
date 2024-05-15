@@ -16,12 +16,33 @@ to apply secrets in k8s
 
 kubectl apply -f $name_of_secrets.yaml
 
+-----------------------------------------
 
-to show Deployment, Services and Secrets
+to show all
+
+kubectl get all
+
+to show Pods, Deployment, Services and Secrets
 
 kubectl get deployment 
 
 kubectl get services
 
 kubectl get secrets
+
+kubectl get pods
+
+--------CONFIGURATION-----------
+
+to check status 
+
+kubectl get $name --watch
+
+
+to check problem 
+
+example
+kubectl describe pod $pod_name
+
+
 
