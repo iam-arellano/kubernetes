@@ -1,0 +1,27 @@
+Install minikube
+
+https://minikube.sigs.k8s.io/docs/start/
+
+
+
+to apply deployment in k8s
+
+kubectl apply -f $name_of_deployment.yaml
+
+to apply services in k8s
+
+kubectl apply -f $name_of_services.yaml
+
+to apply secrets in k8s
+
+kubectl apply -f $name_of_secrets.yaml
+
+
+to show Deployment, Services and Secrets
+
+kubectl get deployment 
+
+kubectl get services
+
+kubectl get secrets
+

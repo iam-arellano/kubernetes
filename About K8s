@@ -1,0 +1,9 @@
+What is k8s?
+
+- k8s is an orchestation tool allowing you to run and manage your container-base workloads
+
+
+What is pod
+
+- pod is a smallest unit of deployment of k8s
+- you can run 1 or more container
