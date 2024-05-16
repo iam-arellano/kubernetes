@@ -44,5 +44,15 @@ to check problem
 example
 kubectl describe pod $pod_name
 
+to check specific
+
+kubectl get all | grep $name
+
+
+to check logs
+
+
+kubectl logs $name
+
 
 
