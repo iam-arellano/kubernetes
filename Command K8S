@@ -56,3 +56,19 @@ kubectl logs $name
 
 
 
+---------------------------
+
+to run service
+
+minikube service $name_of_service
+
+
+-------------------------------------
+
+to create namespace
+
+kubectl create namespace $create_namespace
+
+to show namepasce
+
+kubectl get namespace

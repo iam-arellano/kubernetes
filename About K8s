@@ -5,5 +5,27 @@ What is k8s?
 
 What is pod
 
-- pod is a smallest unit of deployment of k8s
-- you can run 1 or more container
+- pod is a smallest unit of deployment of k8s you can run 1 or more container 
+
+
+
+
+deployment >> services
+
+
+Clusterip -  is the default service type in Kubernetes, and it provides internal connectivity between different components of our application.
+
+loadbalancer type is using for internal and external ip
+
+
+nordport -  is a service that is used to expose the application to the internet from where the end-users can access it. If you create a NodePort Service Kubernetes will assign the port within the range of (30000-32767). The application can be accessed by end-users using the node's IP address
+
+
+----------------------------------------------------------------
+
+What is Namespace?
+
+- Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster.
+
+Example
+   for using namespaces in Kubernetes could be a company with multiple development teams working on different projects. Each team can have their own namespace to deploy and manage their applications, ensuring that their resources are isolated from other teams. This helps in organizing and managing the resources efficiently within the Kubernetes cluster.
