@@ -72,3 +72,8 @@ kubectl create namespace $create_namespace
 to show namepasce
 
 kubectl get namespace
+
+
+
+
+-----------------------------------

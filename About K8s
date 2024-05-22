@@ -27,19 +27,9 @@ What is Namespace?
 
 - Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster.
 
+- you can setup permission
+
 Example
    for using namespaces in Kubernetes could be a company with multiple development teams working on different projects. Each team can have their own namespace to deploy and manage their applications, ensuring that their resources are isolated from other teams. This helps in organizing and managing the resources efficiently within the Kubernetes cluster.
 
-
-
-----------------------------------------------------
-
-
-What is stateful set
-
-- use for stateful application example database any application store data
-
-
-What is stateless
-
-- do not keep record of state
+   
