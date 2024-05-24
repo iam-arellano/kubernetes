@@ -7,9 +7,21 @@ What is pod
 
 - pod is a smallest unit of deployment of k8s you can run 1 or more container 
 
+----------------------------------------------------------------------
+Worker Node
+
+Kubeproxy - is responsible for networking and provide network like ip address and also the load balancing. kubeproxy is reponsible to comunicate pod to pod and to make application accessible to end user
+
+Kubelet - is responsible for running your application and if pod or application is not running  kubelet inform one of the components  and control plane detect something wrong  
+
+Container runtime - runs container inside pod
 
 
 
+
+
+
+---------------------------------------------------------------
 deployment >> services
 
 
