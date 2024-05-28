@@ -55,3 +55,10 @@ What is stateful set
 What is stateless
 
 - do not keep record of state
+
+
+-----------------------------
+
+What is kubernetes volume - to store data in directorry acessible accros on container running in pods
+
+Types of kubernetes volume - 

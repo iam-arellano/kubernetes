@@ -1,0 +1,1 @@
+cluster ip use if you dont want to expose pod outiside network
