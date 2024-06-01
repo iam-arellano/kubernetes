@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-k8s-deployment
+  labels:
+    app: nginx-k8s
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-k8s
+  template:
+    metadata:
+      labels:
+        app: nginx-k8s
+    spec:
+      containers:
+      - name: nginx-k8s-container
+        image: raemondarellano/nginx-k8s:latest
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-k8s
+spec:
+  selector:
+    app: nginx-k8s
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+ #     nodePort: 30001
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-k8s
+spec:
+  rules:
+  - host: "raemond3.example"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nginx-k8s
+            port:
+              number: 80
+
