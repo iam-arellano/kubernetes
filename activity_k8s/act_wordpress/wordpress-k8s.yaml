@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-k8s-deployment
+  labels:
+    app: wordpress-k8s
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wordpress-k8s
+  template:
+    metadata:
+      labels:
+        app: wordpress-k8s
+    spec:
+      containers:
+      - name: wordpress-k8s-container
+        image: raemondarellano/wordpress:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: WORDPRESS_DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: db-host
+        - name: WORDPRESS_DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: db-name
+        - name: WORDPRESS_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: username
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+
+
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-service
+spec:
+  selector:
+    app: wordpress-k8s
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+ #     nodePort: 30001
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+spec:
+  rules:
+  - host: "wordpress.example"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: wordpress-service
+            port:
+              number: 80
+
