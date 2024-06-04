@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-k8s-deployment
+  labels:
+    app: mysql-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-k8s
+  template:
+    metadata:
+      labels:
+        app: mysql-k8s
+    spec:
+      containers:
+      - name: mysql-k8s-container
+        image: raemondarellano/mysql:v1
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: db-name
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-k8s-service
+spec:
+  selector:
+    app: mysql-k8s
+  type: LoadBalancer
+  ports:
+    - port: 3306
+      targetPort: 3306
+ #     nodePort: 30001
+
+
