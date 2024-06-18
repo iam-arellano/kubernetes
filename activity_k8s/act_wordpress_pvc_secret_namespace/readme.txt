@@ -1,0 +1,1 @@
+complete project in wordpress with namespace,secret,persistent volume and persistent claim.
