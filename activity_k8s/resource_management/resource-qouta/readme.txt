@@ -1,0 +1,1 @@
+this is for restrict the request and limits in namespace level
