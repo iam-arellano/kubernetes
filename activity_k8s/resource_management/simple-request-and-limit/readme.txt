@@ -1,0 +1,1 @@
+this is for limit and request memory and cpu of your pod 
