@@ -16,5 +16,5 @@ Let's say you have a Kubernetes cluster with different namespaces for your devel
 By setting up RBAC in this way, you can control access to resources within your Kubernetes cluster based on the roles assigned to users.
 
 
-
-![alt text](<rbac sample.png>)
+sample image
+![sample_image](<rbac sample.png>)
