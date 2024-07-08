@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-scheduling
+  labels:
+    app: nginx-scheduling-nodes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-scheduling-nodes
+  template:
+    metadata:
+      labels:
+        app: nginx-scheduling-nodes
+    spec:
+      nodeName:  minikube   #specific nodes to deploy your app
+      containers:
+      - name: c-nginx
+        image: raemondarellano/nginx-k8s:latest
+        ports:
+        - containerPort: 80
