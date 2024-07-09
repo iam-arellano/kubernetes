@@ -1,0 +1,27 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-hpa
+spec:
+  scaleTargetRef:                 ## connect to your deployment yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    name: deployment-hpa          ## your deployment name
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu                 ## cpu avarage        
+        target:
+          type: Utilization
+          averageUtilization: 50
+    - type: Resource
+      resource:
+        name: memory              ## memory average
+        target:
+          type: AverageValue
+          averageValue: 80Mi
+
+
+

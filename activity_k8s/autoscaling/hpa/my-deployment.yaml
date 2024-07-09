@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-hpa
+  labels:
+    app: nginx-hpa
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-hpa
+  template:
+    metadata:
+      labels:
+        app: nginx-hpa
+    spec:
+      containers:
+      - name: c-nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+
+#---
+
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: nginx-service
+#spec:
+#  selector:
+#    app: nginx
+#  type: LoadBalancer
+#  ports:
+#    - port: 80
+#      targetPort: 80
+#      nodePort: 30001
+
