@@ -6,3 +6,11 @@ kubectl get pods
 To check CPU and memory of your pods
 
 kubectl get top pods
+
+To check HPA 
+
+kubectl get hpa
+
+To describe hpa
+
+kubectl describe hpa name_of_hpa
