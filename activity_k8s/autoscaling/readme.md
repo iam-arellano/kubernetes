@@ -9,4 +9,5 @@ Vertical Pod Autoscaler (VPA)
  Cluster Autoscaler (CA)    
 -  automatically adds or removes nodes in a cluster based on resource requests from pods.
    The Cluster Autoscaler doesn't directly measure CPU and memory usage values to make a scaling decision.
-- 
+
+  ![autoscaler](https://github.com/iam-arellano/kubernetes/assets/157453032/b95f4618-997c-4657-a008-565113133500)
