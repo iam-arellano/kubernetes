@@ -1,0 +1,5 @@
+
+To fix this you need to clone autoscaller in github, because autoscaller is not automatically install to your cluster
+error: resource mapping not found for name: "my-vpa" namespace: "" from "VerticalPodAutoscale.yaml": no matches for kind "VerticalPodAutoscaler" in version "autoscaling.k8s.io/v1" ensure CRDs are installed first
+
+- git clone https://github.com/kubernetes/autoscaler.git
