@@ -20,3 +20,12 @@ kubectl apply -f vpa.yaml
 To check vpa
 
 kubectl get vpa
+
+To describe VPA
+
+kubectl describe vpa name_of_vpa
+
+description
+Lower bound - the minimum estimation for the container
+Upper bound - the maximum recommendation resource for the container
+
