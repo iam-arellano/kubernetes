@@ -39,6 +39,10 @@ helm install grafana grafana/grafana
 
 kubectl expose service grafana --type=NodePort --target-port=3000  --name=grafana-ext
 
+
+
+
+
 ## Credentials to login in grafana
 
 username:admin
@@ -46,3 +50,10 @@ username:admin
 ### To check password 
 
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+
+
+### To check the port in service of prometheus and grafana
+
+kubectl get svc
