@@ -23,4 +23,4 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 
 To decode base64 password
 
-echo your_base64password | base64 --decod
+echo your_base64password | base64 --decode
