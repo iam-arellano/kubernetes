@@ -1,0 +1,22 @@
+Install Argo CD
+
+
+kubectl create namespace argocd
+
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+Expose your argocd to your cluster
+
+kubectl port-forward -n argocd svc/argocd-server 8081:443
+
+Login to argocd in chrome
+
+http://localhost:8081
+
+Credentials to login
+
+username: admin
+
+To check password of admin
+
+kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
