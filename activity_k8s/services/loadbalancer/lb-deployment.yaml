@@ -19,3 +19,18 @@ spec:
         image: c_nginx
         ports:
         - containerPort: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-service
+spec:
+  selector:
+    app: lb-nginx
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+#      nodePort: 30001
+
