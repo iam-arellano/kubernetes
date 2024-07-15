@@ -1,3 +1,7 @@
+What is Autoscalling? 
+  - autoscaling is a feature that allows a cluster to automatically increase or decrease the number of nodes, or adjust pod resources, in response to demand
+
+
 Horizontal Pod Autoscaler (HPA)
  - increase the number of replicas whenever there is a spike in CPU, MEMORY or some other metric that
    way the load is distributed among the pods
