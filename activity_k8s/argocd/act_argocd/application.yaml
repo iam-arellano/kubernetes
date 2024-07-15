@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/iam-arellano/kubernetes.git
+    targetRevision: HEAD
+    path: activity_k8s/argocd/act_argocd/manifest-yaml                       # path of your yaml manifest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myfirst-argocd-app
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:                                                              # to automaticaly sync  any change in the git repository
+      selfHeal: true
+      prune: true
