@@ -10,4 +10,21 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 
 
+To create customgit  helm
+
+sudo helm create my_app
+
+
+To add repo in artifact hub
+
+helm repo add name url_repo
+
+example
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+
+To check all repo 
+
+helm repo
 
