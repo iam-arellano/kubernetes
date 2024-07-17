@@ -15,6 +15,23 @@ To create customgit  helm
 sudo helm create my_app
 
 
+To check syntax of your chart
+
+helm lint ./mychart-folder/
+
+To check orview of your chart before deploy to your kubernetes cluster
+
+helm install --dry-run --debug ./mychart-folder/ --generate-name
+
+To deploy your helm chart in kubernetes cluste
+
+helm install custom-name ./mychart-folder/ 
+
+
+
+##########################
+
+
 To add repo in artifact hub
 
 helm repo add name url_repo
@@ -26,5 +43,5 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 
 To check all repo 
 
-helm repo
+helm repo list
 
