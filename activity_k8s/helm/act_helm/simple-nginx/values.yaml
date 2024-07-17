@@ -1,0 +1,9 @@
+appName: helm-deployment
+
+appLabel: helm-label
+
+#image:
+#  name: nginx
+#  tag: latest
+
+appNameservice: helm-service
