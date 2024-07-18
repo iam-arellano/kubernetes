@@ -1,0 +1,11 @@
+appName: dev-deployment
+
+appLabel: dev-label
+
+image:
+  name: raemondarellano/hellodev-image
+  tag: latest
+
+appNameservice: helm-devservice
+
+nodePort: 30008

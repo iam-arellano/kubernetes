@@ -1,0 +1,11 @@
+appName: prod-deployment
+
+appLabel: prod-label
+
+image:
+  name: raemondarellano/helloprod-image
+  tag: latest
+
+appNameservice: helm-prodservice
+
+nodePort: 30009

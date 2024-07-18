@@ -1,0 +1,19 @@
+## to check svc of kubernetes
+
+kubectl get svc
+
+## to check deployment of kubernetes
+
+kubectl get deployment
+
+
+### to run helm dev
+
+helm install dev  dev-prod-helm/ --values dev-prod-helm/values-dev.yaml 
+
+### to run helm prod
+
+
+helm install prod  dev-prod-helm/ --values dev-prod-helm/values-prod.yaml 
+
+
