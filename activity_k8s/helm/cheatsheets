@@ -28,6 +28,10 @@ To deploy your helm chart in kubernetes cluste
 helm install custom-name ./mychart-folder/ 
 
 
+To update/upgrade after templating
+
+helm upgrade custom-name ./mychart-folder/ 
+
 
 ##########################
 
