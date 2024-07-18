@@ -23,7 +23,7 @@ To check orview of your chart before deploy to your kubernetes cluster
 
 helm install --dry-run --debug ./mychart-folder/ --generate-name
 
-To deploy your helm chart in kubernetes cluste
+To deploy your helm chart in kubernetes cluster
 
 helm install custom-name ./mychart-folder/ 
 
@@ -32,6 +32,17 @@ To update/upgrade after templating
 
 helm upgrade custom-name ./mychart-folder/ 
 
+
+To deploy your helm chart with different environment in kubernetes cluster
+
+helm install custom-name  mychart-folder/ --values mychart-folder/values-prod.yaml
+
+helm install custom-name mychart-folder/ --values mychart-folder/values-dev.yaml
+
+
+To check helm list
+
+helm ls
 
 ##########################
 
